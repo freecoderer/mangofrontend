@@ -2,7 +2,7 @@
 
 <h2>Branch 전략</h2>
 develop: 프론트 개발 브랜치<br>
-feature/~: 기능 개발 브랜치<br>
+feature/~:  컴포넌트 브랜치<br>
 feature/~에서 개발 한 다음 develop 브랜치에 pull request 한 다음 merge 할 것
 
 <h2>개발 환경</h2>
@@ -89,12 +89,3 @@ Recoil이나 Zustand에 비해서 불필요한 세팅 코드가 분명히 많지
 </pre>
 
 Component 단위로 Filter, Map, ReviewWrite, Search등의 기능들을 뺐고,<br> Page는 Main, 레스토랑 정보를 보여주는 Restaurants, 리뷰를 쓰는 페이지인 ReviewWritePage, 검색결과를 보여주는 SearchResult 페이지등으로 일단 나눠놓았다.
-
-services
-
-auth-header.ts
-
-auth.service.ts (Authentication service)
-
-user.service.ts (Data service)
-
