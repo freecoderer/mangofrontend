@@ -8,7 +8,7 @@ const UsersList = () => {
         isSuccess,
         isError,
         error
-    } = useGetUsersQuery();
+    } = useGetUsersQuery(null);
 
     let content;
     if (isLoading) {
@@ -27,6 +27,8 @@ const UsersList = () => {
         )
     } else if (isError) {
         content = <p>{JSON.stringify(error)}</p>;
+    } else {
+        content = <p>Unexpected Error</p>; // 기본 반환 값
     }
 
     return content

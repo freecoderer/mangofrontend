@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { setCredentials } from './authSlice'
 import { useLoginMutation } from './authApiSlice'
-import any = jasmine.any;
 
 interface UserData {
     user: string;
@@ -13,8 +12,8 @@ interface UserData {
 const Login = () => {
 
 
-    const userRef = useRef()
-    const errRef = useRef()
+    const userRef = useRef<HTMLInputElement | null>(null);
+    const errRef = useRef<HTMLParagraphElement | null>(null);
     const [user, setUser] = useState('')
     const [pwd, setPwd] = useState('')
     const [errMsg, setErrMsg] = useState('')
