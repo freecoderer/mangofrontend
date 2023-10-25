@@ -5,6 +5,7 @@ const baseQuery = fetchBaseQuery({
     baseUrl: 'http://localhost:3500',
     credentials: 'include',
     prepareHeaders: (headers, { getState }) => {
+        // @ts-ignore
         const token = getState().auth.token
         if (token) {
             headers.set("authorization", `Bearer ${token}`)
@@ -17,6 +18,7 @@ const baseQuery = fetchBaseQuery({
 const baseQueryWithReauth = async (args:any, api:any, extraOptions:any) => {
     let result = await baseQuery(args, api, extraOptions)
 
+    // @ts-ignore
     if (result?.error?.originalStatus === 403) {
         console.log('sending refresh token')
         // send refresh token to get new access token
@@ -29,6 +31,7 @@ const baseQueryWithReauth = async (args:any, api:any, extraOptions:any) => {
             // retry the original query with new access token
             result = await baseQuery(args, api, extraOptions)
         } else {
+            // @ts-ignore
             api.dispatch(logOut())
         }
     }

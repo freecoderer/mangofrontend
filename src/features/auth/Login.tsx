@@ -24,6 +24,7 @@ const Login = () => {
     const dispatch = useDispatch()
 
     useEffect(() => {
+        // @ts-ignore
         userRef.current.focus();
     }, [])
 
@@ -51,6 +52,7 @@ const Login = () => {
             } else {
                 setErrMsg('Login Failed');
             }
+            // @ts-ignore
             errRef.current.focus();
         }
     }
