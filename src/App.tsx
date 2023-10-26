@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom'
 import Layout from './components/Layout/Layout'
-import Public from './components/Public/Public'
+import Home from './pages/Home/home'
 import Login from './features/auth/Login'
 import Welcome from './features/auth/Welcome'
 import RequireAuth from './features/auth/RequireAuth'
@@ -12,7 +12,7 @@ function App() {
         <Routes>
             <Route path="/" element={<Layout />}>
                 {/* public routes */}
-                <Route index element={<Public />} />
+                <Route index element={<Home />} />
                 <Route path="login" element={<Login />} />
 
                 {/* protected routes */}
