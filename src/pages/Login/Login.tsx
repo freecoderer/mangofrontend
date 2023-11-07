@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import {useDispatch } from 'react-redux';
-import { login, logout } from '../../components/Store/authSlice';
+import { login} from '../../components/Store/authSlice';
 import './Login.scss';
 import { Link } from 'react-router-dom';
 import {useNavigate} from "react-router-dom";
