@@ -19,7 +19,7 @@ export default function Nav() {
 
     return (
         <div className="NavContainer">
-            <img src={logo} width="130px" height="50px"/>
+            <img src={logo} width="130px" height="50px" alt={logo}/>
             <ul>
                 {!accessToken ? (
                     <>

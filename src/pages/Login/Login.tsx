@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useSelector, useDispatch } from 'react-redux';
+import {useDispatch } from 'react-redux';
 import { login, logout } from '../../components/Store/authSlice';
 import './Login.scss';
 import { Link } from 'react-router-dom';
@@ -9,7 +9,6 @@ import {useNavigate} from "react-router-dom";
 const Login = () => {
     const dispatch = useDispatch();
     // @ts-ignore
-    const accessToken = useSelector(state => state.auth.accessToken);
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
@@ -31,11 +30,6 @@ const Login = () => {
         }
     };
 
-    const logoutUser = () => {
-        dispatch(logout());
-        localStorage.removeItem('accessToken');
-        alert('Logout successful!');
-    };
 
     return (
         <div>
