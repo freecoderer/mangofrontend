@@ -29,13 +29,6 @@ function App() {
                 <Route path="login" element={<Login />} />
                 <Route path="search" element={<Search/>}/>
                 <Route path="restaurants" element={<Restaurants />} />
-
-                {/* protected routes */}
-                <Route element={<RequireAuth />}>
-                    <Route path="welcome" element={<Welcome />} />
-                    <Route path="userslist" element={<UsersList />} />
-                </Route>
-
                 <Route path="signup" element={<Signup />} />
             </Route>
         </Routes>
