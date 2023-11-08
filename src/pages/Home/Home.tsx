@@ -30,7 +30,7 @@ const Home = () => {
               <div className="recContainer">
                 {/* 컴포넌트화 필요 */}
                 <div className="recBox">
-                  <img src={rec} width="400px" height="400px" style={{borderRadius: "15px"}}/>
+                  <img src={rec} width="400px" height="400px" style={{borderRadius: "15px"}} alt={rec}/>
                   <div className="recContentBox">
                     <div className="recContent">
                       <div>경기 부천시</div>
@@ -42,7 +42,7 @@ const Home = () => {
                 </div>
       
                 <div className="recBox">
-                  <img src={rec} width="400px" height="400px" style={{borderRadius: "15px"}}/>
+                  <img src={rec} width="400px" height="400px" style={{borderRadius: "15px"}} alt={rec}/>
                   <div className="recContentBox">
                     <div className="recContent">
                       <div>경기 부천시</div>
@@ -54,7 +54,7 @@ const Home = () => {
                 </div>
       
                 <div className="recBox">
-                  <img src={rec} width="400px" height="400px" style={{borderRadius: "15px"}}/>
+                  <img src={rec} width="400px" height="400px" style={{borderRadius: "15px"}} alt={rec}/>
                   <div className="recContentBox">
                     <div className="recContent">
                       <div>경기 부천시</div>
@@ -67,7 +67,7 @@ const Home = () => {
               </div>
             </div>
             <div className="bannerBox">
-              <img src={heart} width="229px" height="237px"/>
+              <img src={heart} width="229px" height="237px" alt={heart}/>
               <p>솔직한 리뷰로 맛집 선택</p>
               <div>다람쥐 쳇바퀴 어쩌구 저쩌구 다람쥐 쳇바퀴 어쩌구 저쩌구 다람쥐 쳇바퀴 어쩌구 저쩌구</div>
               <div>다람쥐 쳇바퀴 어쩌구 저쩌구 다람쥐 쳇바퀴 어쩌구 저쩌구 다람쥐 쳇바퀴 어쩌구 저쩌구</div>
@@ -77,7 +77,7 @@ const Home = () => {
                 <div className="title">쉽고 빠르게 업체 등록하기</div>
                 <div>다람쥐 쳇바퀴 어쩌구</div>
               </div>
-              <img src={hands} width="393px" height="459px"/>
+              <img src={hands} width="393px" height="459px" alt={hands}/>
             </div>
           </div>
           <Footer />
