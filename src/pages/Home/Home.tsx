@@ -22,11 +22,11 @@ const Home = () => {
                 <p className="rightTitle">믿고 보는 <span style={{ color: "#3AB062" }}>후기</span></p>
               </div>
               <div className="adImgWrapper">
-                <img src={chatImg} />
+                <img src={chatImg} alt={chatImg}/>
               </div>
             </div>
             <div className="recWrapper">
-              <div className="recTitle"><img src={location}/><span style={{ color: "#3AB062" }}>부천시</span> 맛집 추천</div>
+              <div className="recTitle"><img src={location} alt={location}/><span style={{ color: "#3AB062" }}>부천시</span> 맛집 추천</div>
               <div className="recContainer">
                 {/* 컴포넌트화 필요 */}
                 <div className="recBox">

@@ -15,12 +15,12 @@ export default function RestaurantsBox ( {id, addressName, categoryName, imageUr
         <div className="restaurantBox">
           {
             categoryName === "한식" ? (
-              <img src={korean} className="restaurantImg"/>
+              <img src={korean} className="restaurantImg" alt={korean}/>
             ) : (
               categoryName === "샤브샤브" ? (
-                <img src={shav} className="restaurantImg"/>
+                <img src={shav} className="restaurantImg" alt={shav}/>
               ) : (
-                <img src={buffet} className="restaurantImg"/>
+                <img src={buffet} className="restaurantImg" alt={buffet}/>
               )
             )
           }

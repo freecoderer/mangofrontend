@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import cheerio from "cheerio";
 import "./restaurants.scss";
 
 import sortArrow from "../../assets/icons/sortArrow.png";
@@ -20,7 +19,7 @@ interface RestaurantProps {
 
 const Restaurants = () => {
   const [isCategory, setIsCategory] = useState(false);
-  const [category, setCategory] = useState("카테고리");
+  // const [category, setCategory] = useState("카테고리");
   const [restaurantList, setRestaurantList] = useState([]);
 
   const fetchList = async () => {
@@ -48,7 +47,7 @@ const Restaurants = () => {
         <div className="searchLine"></div>
         <div className="categoryWrapper">
           <div className="categoryBox" onClick={() => setIsCategory(true)}>카테고리</div>
-          <div className="categorySort">인기순 <img src={sortArrow}/></div>
+          <div className="categorySort">인기순 <img src={sortArrow} alt={sortArrow}/></div>
         </div>
 
         <div className="restaurantsContainer">
