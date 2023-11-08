@@ -53,7 +53,7 @@
   },
   "name": "frontend",
   "private": true,
-  "proxy": "http://34.22.82.17:8080",
+  "proxy": "http://34.83.15.61:8080",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
