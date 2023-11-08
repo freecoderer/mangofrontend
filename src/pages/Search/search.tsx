@@ -12,7 +12,7 @@ export default function Search () {
     return (
         <section className="mainWrapper">
             <Nav/>
-            <Filter size="large"/>
+            <Filter size="medium"/>
             <div className="searchContainer">
                 <div className="searchList">
                     {list.map((e, i) => {
