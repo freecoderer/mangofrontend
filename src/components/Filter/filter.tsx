@@ -21,7 +21,7 @@ function Filter ( {size}: FilterProps ) {
     return(
         <div className="filterWrapper">
             <div className={`filterInput ${size}`}>
-                <img src={search} width="50px" height="50px" style={{marginTop: "23px"}}/>
+                <img src={search} alt={search} width="50px" height="50px" style={{marginTop: "23px"}}/>
                 {size === "large" ? (
                     <input 
                     type="text" 
