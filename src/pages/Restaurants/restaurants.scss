@@ -113,16 +113,24 @@
     // margin: 40px 0;
     height: 32%;
     
-    div{
-        width: 95px;
-        height: 52px;
-        text-align: center;
-        line-height: 52px;
-        background-color: #f5f6fa;
-        border-radius: 30px;
+    
+}
 
-        font-size: 20px;
-        color: #6b6c70;
+.categoryBtn{
+    width: 95px;
+    height: 52px;
+    text-align: center;
+    line-height: 52px;
+    background-color: #f5f6fa;
+    border-radius: 30px;
+
+    font-size: 20px;
+    color: #6b6c70;
+    cursor: pointer;
+
+    &.active{
+        background-color: #3AB062;
+        color: #fff;
     }
 }
 
