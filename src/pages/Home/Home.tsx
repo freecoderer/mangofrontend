@@ -1,14 +1,14 @@
-import './Home.scss'
+import './Home.scss';
 
 import Filter from "../../components/Filter/filter";
-import Nav from "../../components/Nav/nav";
 import Footer from "../../components/Footer/footer";
+import Nav from "../../components/Nav/nav";
 
-import rec from "../../assets/imgs/rec1.png";
-import heart from "../../assets/imgs/heart.png";
-import chatImg from "../../assets/imgs/chatImg.png";
-import hands from "../../assets/imgs/hands.png";
 import location from "../../assets/icons/location.png";
+import adverImg from "../../assets/imgs/adverImg.png";
+import chatImg from "../../assets/imgs/chatImg.png";
+import heart from "../../assets/imgs/heart.png";
+import rec from "../../assets/imgs/rec1.png";
 
 const Home = () => {
     return (
@@ -69,15 +69,13 @@ const Home = () => {
             <div className="bannerBox">
               <img src={heart} width="229px" height="237px" alt={heart}/>
               <p>솔직한 리뷰로 맛집 선택</p>
-              <div>다람쥐 쳇바퀴 어쩌구 저쩌구 다람쥐 쳇바퀴 어쩌구 저쩌구 다람쥐 쳇바퀴 어쩌구 저쩌구</div>
-              <div>다람쥐 쳇바퀴 어쩌구 저쩌구 다람쥐 쳇바퀴 어쩌구 저쩌구 다람쥐 쳇바퀴 어쩌구 저쩌구</div>
+              <div>다양한 방문자들의 리뷰를 보고 맛집을 선택해보세요!</div>
             </div>
             <div className="adBox">
               <div className="adTitleBox">
-                <div className="title">쉽고 빠르게 업체 등록하기</div>
-                <div>다람쥐 쳇바퀴 어쩌구</div>
+                <div className="title">TV에 나온 맛집</div>
+                <div><img src={adverImg} alt='adverImg'/></div>
               </div>
-              <img src={hands} width="393px" height="459px" alt={hands}/>
             </div>
           </div>
           <Footer />
