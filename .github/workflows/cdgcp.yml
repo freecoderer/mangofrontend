@@ -34,7 +34,7 @@ jobs:
       - name: dev Docker build & push
         if: contains(github.ref, 'main') || contains(github.ref, 'develop')
         run: |
-          docker login ghcr.io -u ${{ github.actor }} -p ${{ secrets.SONG_TOKEN }}
+          docker login ghcr.io -u pinetree2 -p ${{ secrets.SONG_TOKEN }}
           docker build -f Dockerfile -t ghcr.io/mangoteam3/frontend/durian-front:${{ github.sha }} .
           docker push ghcr.io/mangoteam3/frontend/durian-front:${{ github.sha }}
           echo "완료"
@@ -51,8 +51,8 @@ jobs:
           script: |
             docker login ghcr.io -u ${{ github.actor }} -p ${{ secrets.GIT_TOKEN }}
             if [ "$(docker ps -aq -f name=durian-front)" ]; then
-              docker stop $(docker ps -aq -f name=durian-front)
-              docker rm -f $(docker ps -aq -f name=durian-front)
+              docker stop durian-front
+              docker rm -f durian-front
 
             fi
             docker pull ghcr.io/mangoteam3/frontend/durian-front:${{ github.sha }}
