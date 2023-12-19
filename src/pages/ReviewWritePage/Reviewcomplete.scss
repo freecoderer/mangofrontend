@@ -1,0 +1,30 @@
+.review-complete {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  background-color: #f5f5f5;
+}
+
+.review-complete__title {
+  font-size: 2em;
+  color: #333;
+  margin-bottom: 1em;
+}
+
+.review-complete__button {
+  padding: 0.5em 1em;
+  font-size: 1em;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.review-complete__button:hover {
+  background-color: #0056b3;
+}

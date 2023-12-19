@@ -65,15 +65,15 @@ Recoil이나 Zustand에 비해서 불필요한 세팅 코드가 분명히 많지
  ┃ ┃ ┗ 📜search.tsx
  ┣ 📂pages
  ┃ ┣ 📂Main
- ┃ ┃ ┗ 📜index.tsx
+ ┃ ┃ ┗ 📜Rating.tsx
  ┃ ┣ 📂Restaurants
- ┃ ┃ ┗ 📜index.tsx
+ ┃ ┃ ┗ 📜Rating.tsx
  ┃ ┣ 📂ReviewWritePage
- ┃ ┃ ┗ 📜index.tsx
+ ┃ ┃ ┗ 📜Rating.tsx
  ┃ ┗ 📂SearchResult
- ┃ ┃ ┗ 📜index.tsx
+ ┃ ┃ ┗ 📜Rating.tsx
  ┣ 📂store
- ┃ ┗ 📜index.tsx
+ ┃ ┗ 📜Rating.tsx
  ┣ 📂style
  ┃ ┗ 📂font
  ┃ ┃ ┗ 📜폰트정해지면채울예정. txt
@@ -81,7 +81,7 @@ Recoil이나 Zustand에 비해서 불필요한 세팅 코드가 분명히 많지
  ┣ 📜App.test.tsx
  ┣ 📜App.tsx
  ┣ 📜index.scss
- ┣ 📜index.tsx
+ ┣ 📜Rating.tsx
  ┣ 📜logo.svg
  ┣ 📜react-app-env.d.ts
  ┣ 📜reportWebVitals.ts

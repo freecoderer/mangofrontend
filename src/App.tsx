@@ -7,6 +7,10 @@ import Home from './pages/Home/Home';
 import Login from './pages/Login/Login';
 import Signup from './pages/Signup/Signup';
 import './App.scss';
+import Rating from "./pages/ReviewWritePage/Rating";
+import Write from './pages/ReviewWritePage/Write';
+import Reviewcomplete from './pages/ReviewWritePage/Reviewcomplete';
+import Redirection from './pages/Login/Redirection';
 
 function App() {
     const dispatch = useDispatch();
@@ -26,6 +30,10 @@ function App() {
                 <Route index element={<Home />} />
                 <Route path="login" element={<Login />} />
                 <Route path="signup" element={<Signup />} />
+                <Route path="/Write" element={<Write />} />
+                <Route path="Rating" element={<Rating />} />
+                <Route path="/Reviewcomplete" element={<Reviewcomplete />} />
+                <Route path='/auth/kakao/callback' element={<Redirection />} />
             </Route>
         </Routes>
     )

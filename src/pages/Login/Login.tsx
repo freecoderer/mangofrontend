@@ -7,14 +7,21 @@ import { Link } from 'react-router-dom';
 import {useNavigate} from "react-router-dom";
 
 const Login = () => {
+    const REST_API_KEY = '1faaacda5628317938fb787d27311f89';
+    const REDIRECT_URI = 'http://3.217.20.163:8080/auth/kakao/callback';
     const dispatch = useDispatch();
+    const link = `https://kauth.kakao.com/oauth/authorize?client_id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}&response_type=code`;
+    const loginHandler = () => {
+        window.location.href = link;
+    };
+
     // @ts-ignore
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
     const loginUser = async () => {
         try {
-            const response = await axios.post('http://34.83.15.61:8080/api/user/login', {
+            const response = await axios.post('http://localhost:3000/api/user/login', {
                 userName: username,
                 password: password,
             });
@@ -54,12 +61,12 @@ const Login = () => {
                             <button className={"btn"} onClick={loginUser}><p className={"btntxt"}>로그인</p></button>
                         </div>
                         <p className={"sns"}>SNS 계정으로 간편하게 로그인/회원가입!</p>
-                        <Link to="/Signup">
+                        <button type={"button"} className={"none"} onClick={loginHandler}>
                             <svg className={"kakao"} xmlns="http://www.w3.org/2000/svg" width="62" height="62" viewBox="0 0 62 62" fill="none">
                                 <circle cx="31" cy="31" r="31" fill="#FEE500"/>
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M30.6992 40.2593C38.3453 40.2593 44.5438 35.1547 44.5438 28.8578C44.5438 22.5609 38.3453 17.4563 30.6992 17.4563C23.053 17.4563 16.8545 22.5609 16.8545 28.8578C16.8545 32.3909 18.8059 35.5486 21.8695 37.6399L21.0177 42.536C20.8704 43.3829 21.7896 44.0087 22.5235 43.5612L28.2344 40.0791C29.0342 40.1975 29.8579 40.2593 30.6992 40.2593Z" fill="#060A10"/>
+                                <path fillRule="evenodd" clipRule="evenodd" d="M30.6992 40.2593C38.3453 40.2593 44.5438 35.1547 44.5438 28.8578C44.5438 22.5609 38.3453 17.4563 30.6992 17.4563C23.053 17.4563 16.8545 22.5609 16.8545 28.8578C16.8545 32.3909 18.8059 35.5486 21.8695 37.6399L21.0177 42.536C20.8704 43.3829 21.7896 44.0087 22.5235 43.5612L28.2344 40.0791C29.0342 40.1975 29.8579 40.2593 30.6992 40.2593Z" fill="#060A10"/>
                             </svg>
-                        </Link>
+                        </button>
                     </section>
                 </>
         </div>

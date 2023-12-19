@@ -2,15 +2,16 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import './Signup.scss'
 import {Link} from "react-router-dom";
+import {REGISTER} from "redux-persist/es/constants";
 
 
 const Signup = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     //회원 가입 절차에는 일반적으로 엑세스 토큰을 필요로 하지 않는다 -> 사용자가 아직 시스템상에 등록되어 있지 않기 때문
-    const register = async () => {
+    const register = async (key:any) => {
         try {
-            await axios.post('http://34.83.15.61:8080/api/user/join', {
+            await axios.post('http://3.217.20.163:8080/api/user/join', {
                 userName: username,
                 password: password,
             });
@@ -20,7 +21,13 @@ const Signup = () => {
             alert('Registration failed!');
             console.error(error);
         }
+
+        return {
+            type: REGISTER,
+            key: key
+        };
     };
+
     return (
         <div>
             <section className="signup">
