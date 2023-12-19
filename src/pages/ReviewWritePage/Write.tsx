@@ -14,7 +14,7 @@ const Write = () => {
     const navigate = useNavigate();
     // @ts-ignore
     const location = useLocation<LocationState>();
-    const [score, setScore] = useState<number>(location.state.rating);
+    const [score] = useState<number>(location.state.rating);
     const [reviewContents, setReviewContents] = useState<string>('');
     const [reviewPic, setReviewPic] = useState<File | null>(null);
 

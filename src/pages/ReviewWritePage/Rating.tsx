@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import './Rating.scss';
 import { Link } from 'react-router-dom';
 const Rating = () => {
-    const [rating, setRating] = useState(0);
+    const [, setRating] = useState(0);
     const navigate = useNavigate();
 
     const sendRating = (value: number) => {
