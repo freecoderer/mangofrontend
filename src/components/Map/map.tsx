@@ -35,6 +35,7 @@ const MapContainer = ({ x, y }:{x : Number | undefined, y: Number | undefined}) 
             marker.setMap(map);
           }
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
       }, [x, y]);
 
     return (
