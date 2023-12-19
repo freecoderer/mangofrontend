@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
 import axios from "axios";
+import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import "./restaurants.scss";
 
-import sortArrow from "../../assets/icons/sortArrow.png";
 
 import Filter from "../../components/Filter/filter";
 import Footer from "../../components/Footer/footer";
@@ -19,13 +19,21 @@ interface RestaurantProps {
 
 const Restaurants = () => {
   const [isCategory, setIsCategory] = useState(false);
-  // const [category, setCategory] = useState("카테고리");
   const [restaurantList, setRestaurantList] = useState([]);
+  const [categoryList, setCategoryList] = useState<string[]>([]);
+
+  const location = useLocation();
+
+  const { state } = location;
+  const findWord: string = (state && state.findWord) || "";
 
   const fetchList = async () => {
     try{
       // if(restaurantList.length === 0){
-        const response = await axios.get('http://34.83.15.61:8080/api/search?query=역곡동');
+        console.log(findWord);
+        console.log(categoryList);
+        console.log(`${findWord} ${categoryList?.join(' ')}`);
+        const response = await axios.get(`http://3.217.20.163:8080/api/restaurants/search?query=${findWord} ${categoryList?.join(' ')}`);
         console.log(response);
         setRestaurantList(response.data);
       // }
@@ -36,22 +44,41 @@ const Restaurants = () => {
 
   useEffect(() => {
     fetchList();
-  }, [])
+  }, [findWord]);
+
+  const toggleCategory = (category: string) => {
+    // Check if the category is already in the list
+    if (categoryList.includes(category)) {
+      // If yes, remove it
+      setCategoryList(categoryList.filter((item) => item !== category));
+    } else {
+      // If not, add it
+      setCategoryList([...categoryList, category]);
+    }
+  };
+
+  const handleCategory = () => {
+    setIsCategory(false);
+    // setCategoryList([]);
+
+    fetchList();
+  }
 
   return (
     <section className="mainWrapper">
       <Nav/>
       <Filter size="small"/>
       <main className="contentWrapper">
-        <div className="searchTitle"><span style={{ color: "#3DAB60"}}>"역곡역"</span>에 대한 검색 결과</div>
+        <div className="searchTitle"><span style={{ color: "#3DAB60"}}>"{findWord}"</span>에 대한 검색 결과</div>
         <div className="searchLine"></div>
         <div className="categoryWrapper">
           <div className="categoryBox" onClick={() => setIsCategory(true)}>카테고리</div>
-          <div className="categorySort">인기순 <img src={sortArrow} alt={sortArrow}/></div>
+          {/* <div className="categorySort">인기순 <img src={sortArrow} alt={sortArrow}/></div> */}
         </div>
 
         <div className="restaurantsContainer">
-        {restaurantList.slice(0, 20).map((e: RestaurantProps) => (
+        {restaurantList.map((e: RestaurantProps) => (
+          <>
           <RestaurantsBox 
             key={e.id} 
             id={e.id} 
@@ -60,6 +87,7 @@ const Restaurants = () => {
             imageUrl={e.imageUrl} 
             placeName={e.placeName} 
           />
+          </>
         ))}
         </div>
       </main>
@@ -71,15 +99,40 @@ const Restaurants = () => {
             <div className="modalContent">
               <div className="categoryTitle">카테고리</div>
               <div className="categoryConatiner">
-                <div>한식</div>
-                <div>양식</div>
-                <div>중식</div>
-                <div>일식</div>
-                <div>기타</div>
+                <div
+                  className={`categoryBtn ${categoryList.includes("한식") ? "active" : ""}`}
+                  onClick={() => toggleCategory("한식")}
+                >
+                  한식
+                </div>
+                <div
+                  className={`categoryBtn ${categoryList.includes("양식") ? "active" : ""}`}
+                  onClick={() => toggleCategory("양식")}
+                >
+                  양식
+                </div>
+                <div
+                  className={`categoryBtn ${categoryList.includes("중식") ? "active" : ""}`}
+                  onClick={() => toggleCategory("중식")}
+                >
+                  중식
+                </div>
+                <div
+                  className={`categoryBtn ${categoryList.includes("일식") ? "active" : ""}`}
+                  onClick={() => toggleCategory("일식")}
+                >
+                  일식
+                </div>
+                <div
+                  className={`categoryBtn ${categoryList.includes("기타") ? "active" : ""}`}
+                  onClick={() => toggleCategory("기타")}
+                >
+                  기타
+                </div>
               </div>
               <div className="modalBtnBox">
-                <div className="cancleBtn" onClick={() => setIsCategory(false)}>닫기</div>
-                <div className="checkBtn" onClick={() => setIsCategory(false)}>카테고리 설정</div>
+                <div className="cancleBtn" onClick={() => {setIsCategory(false);}}>닫기</div>
+                <div className="checkBtn" onClick={handleCategory}>카테고리 설정</div>
               </div>
             </div>
           </div>
