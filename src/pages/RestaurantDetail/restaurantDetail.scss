@@ -1,0 +1,115 @@
+
+.detailContentWrapper{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 80vw;
+    max-width: 1620px;
+    font-size: 20px;
+}
+
+.topWrapper{
+    span{
+        margin: 10px 0;
+    }
+}
+
+.detailCategory{
+    font-size: 1em;
+    color: #838383;
+    margin: 2em 0;
+}
+
+.detailName{
+    font-size: 2em;
+    color: #000;
+    font-weight: 700;
+    margin: 2em 0;
+}
+
+.detailStar{
+    font-size: 2.5em;
+    font-weight: 500;
+    color: #3dab60;
+}
+
+.imgWrapper{
+    margin: 2em 0;
+    overflow-x: scroll;
+    -ms-overflow-style: none;
+}
+
+ .imgWrapper::-webkit-scrollbar{
+   display:none;
+ }
+
+// 리뷰
+.reviewmainWrapper{
+    display: flex;
+    flex-direction: row;
+}
+
+.reviewLeftBox{
+    width: 53vw;
+    margin-right: 3vw;
+
+    span{
+        font-size: 1em;
+        font-weight: 500;
+    }
+}
+
+.reviewBoxTitle{
+    display: flex;
+    justify-content: space-between;
+
+    div{    
+        display: flex;
+        align-items: center;
+    }
+}
+
+.reviewWriteBtn{
+    width: 8.2em;
+    height: 2.15em;
+    border-radius: 50px;
+    background-color: #3dab60;
+    color: #fff;
+    margin: 2.15em 0;
+    justify-content: center;
+
+    span{
+        font-weight: 700;
+        font-size: 0.85em;
+        color: #fff;
+        cursor: pointer;
+    }
+}
+
+.reviewLine{
+    background-color: #cbcbcb;
+    height: 0.05em;
+    
+}
+
+.reviewNumBox{
+    margin-top: 2em;
+    background-color: #f7f8fa;
+    border-radius: 15px;
+    height: 9.1em;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    .reviewCntWrapper{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.reviewRightBox{
+    width: 24vw;
+
+}

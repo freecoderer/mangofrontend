@@ -1,0 +1,63 @@
+.reviewBoxWrapper{
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+    margin: 1.5em 0;
+}
+
+.reviewBoxLeftWrapper{
+    width: 80%;
+}
+
+.reviewBoxInfo{
+    display: flex;
+    justify-content: space-between;
+    height: 32%;
+    margin-bottom: 3%;
+}
+
+.reviewProfile{
+    display: flex;
+}
+
+.reviewProfileInfo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #757575;
+    margin-left: 1em;
+
+    .reviewProfileName{
+        font-size: 20px;
+        color: #000;
+    }
+}
+
+
+.reviewCntImgWrapper{
+    display: flex;
+    align-items: center;
+}
+
+.reviewContentBox{
+    width: 100%;
+    height: 65%;
+    padding: 4%;
+    background-color: #f7f8fa;
+    border-radius: 15px;
+    box-sizing: border-box;
+    line-height: 2em;
+
+    display: flex;
+    align-items: center;
+
+    span{
+        overflow-y: hidden;
+    }
+}
+
+// .reviewImgWrapper{
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+// }

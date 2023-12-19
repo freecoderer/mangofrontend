@@ -2,15 +2,22 @@ import "./filter.scss";
 import { useNavigate } from "react-router-dom";
 
 import search from "../../assets/icons/search.png";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 
 interface FilterProps {
     size: string;
 }
 
 function Filter ( {size}: FilterProps ) {
+    const searchRef = useRef<HTMLInputElement>(null);
     const navigate = useNavigate();
     const [findWord, setFindWord] = useState("");
+
+    useEffect(() => {
+        if(searchRef.current !== null){
+            searchRef.current.focus();
+        }
+    }, []);
 
     const searchData = (e : any) => {
         console.log(e);
@@ -27,6 +34,7 @@ function Filter ( {size}: FilterProps ) {
                     type="text" 
                     placeholder="맛집 검색"
                     onClick={() => navigate("/search")}
+                    // ref={searchRef}
                     />
                     ) : (
                         size === "medium" ? (
@@ -36,12 +44,14 @@ function Filter ( {size}: FilterProps ) {
                             onKeyDown={searchData}
                             value={findWord}
                             onChange={(e) => setFindWord(e.target.value)}
+                            ref={searchRef}
                         />
                     ) : (
                         <input 
                             type="text" 
                             placeholder="맛집 검색"
                             onClick={() => navigate("/search")}
+                            // ref={searchRef}
                         />
                     )
                 )}

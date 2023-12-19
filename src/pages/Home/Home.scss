@@ -124,11 +124,15 @@
 
 .adBox{
   @include flex-row;
-  justify-content: space-between;
-  margin: 100px auto;
+  margin: 0 auto;
+  text-align: center;
   font-size: 30px;
   color: #000;
   width: 1467px;
+}
+
+.adTitleBox{
+  margin: 0 auto;
 }
 
 .title{
