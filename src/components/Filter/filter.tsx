@@ -1,13 +1,60 @@
 import "./filter.scss";
+import { useNavigate } from "react-router-dom";
 
 import search from "../../assets/icons/search.png";
+import { useState, useRef, useEffect } from "react";
 
-const Filter : React.FC = () => {
+interface FilterProps {
+    size: string;
+}
+
+function Filter ( {size}: FilterProps ) {
+    const searchRef = useRef<HTMLInputElement>(null);
+    const navigate = useNavigate();
+    const [findWord, setFindWord] = useState("");
+
+    useEffect(() => {
+        if(searchRef.current !== null){
+            searchRef.current.focus();
+        }
+    }, []);
+
+    const searchData = (e : any) => {
+        console.log(e);
+        if(e.key === "Enter"){
+            navigate("/restaurants", {state: {findWord}});
+        }
+    }
     return(
         <div className="filterWrapper">
-            <div className="filterInputWrapper">
-                <img src={search} width="50px" height="50px" style={{marginTop: "23px"}} alt={search}/>
-                <input type="text" placeholder="맛집 검색"/>
+            <div className={`filterInput ${size}`}>
+                <img src={search} alt={search} width="50px" height="50px" style={{marginTop: "23px"}}/>
+                {size === "large" ? (
+                    <input 
+                    type="text" 
+                    placeholder="맛집 검색"
+                    onClick={() => navigate("/search")}
+                    // ref={searchRef}
+                    />
+                    ) : (
+                        size === "medium" ? (
+                        <input 
+                            type="text" 
+                            placeholder="맛집 검색"
+                            onKeyDown={searchData}
+                            value={findWord}
+                            onChange={(e) => setFindWord(e.target.value)}
+                            ref={searchRef}
+                        />
+                    ) : (
+                        <input 
+                            type="text" 
+                            placeholder="맛집 검색"
+                            onClick={() => navigate("/search")}
+                            // ref={searchRef}
+                        />
+                    )
+                )}
             </div>
         </div>
     );

@@ -1,10 +1,13 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { login } from './components/Store/authSlice'; // authSlice에서 login 액션 생성자를 import 합니다.
-import { Routes, Route } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import Layout from './components/Layout/Layout';
+import { login } from './components/Store/authSlice'; // authSlice에서 login 액션 생성자를 import 합니다.
 import Home from './pages/Home/Home';
 import Login from './pages/Login/Login';
+import RestaurantDetail from './pages/RestaurantDetail/restaurantDetail';
+import Restaurants from './pages/Restaurants/restaurants';
+import Search from './pages/Search/search';
 import Signup from './pages/Signup/Signup';
 import './App.scss';
 import Rating from "./pages/ReviewWritePage/Rating";
@@ -29,6 +32,9 @@ function App() {
                 {/* public routes */}
                 <Route index element={<Home />} />
                 <Route path="login" element={<Login />} />
+                <Route path="search" element={<Search/>}/>
+                <Route path="restaurants" element={<Restaurants />} />
+                <Route path="detail" element={<RestaurantDetail />} />
                 <Route path="signup" element={<Signup />} />
                 <Route path="/Write" element={<Write />} />
                 <Route path="Rating" element={<Rating />} />
