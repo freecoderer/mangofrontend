@@ -1,0 +1,63 @@
+// src/pages/ReviewWritePage/ReviewWritePage.scss
+.rating-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; // This will align the buttons towards the top of the container
+  width: 100%;
+  height: 100vh; // This will make the container take the full height of the viewport
+  flex-direction: row; // This will align the buttons horizontally
+  margin: 0 auto;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 5vw;
+}
+
+.flexy{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin: 5vw;
+  padding: 5vh;
+}
+
+.space{
+  height: 5vh;
+}
+
+.txttxt{
+  color: #000;
+  text-align: center;
+  font-family: Noto Sans;
+  font-size: 3vw;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px; /* 45% */
+}
+
+.navbar a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 1.2em;
+  margin: 0 70px; // This will add space between the buttons horizontally
+  background-color: white;
+  border-style: none;
+}
+
+@media (max-width: 600px) {
+  .rating-container {
+    flex-direction: column;
+  }
+
+  button {
+    margin-bottom: 20px;
+  }
+}
