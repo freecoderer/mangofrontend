@@ -1,6 +1,6 @@
 # MangoFrontend
 
-![header](https://capsule-render.vercel.app/api?type=waving&color=7F7FD5&text=MangoFrontend&height=100&fontSize=40&fontColor=ffffff)
+![header](https://capsule-render.vercel.app/api?type=waving&color=034F84&text=MangoFrontend&height=100&fontSize=40&fontColor=ffffff)
 
 ## Overview
 MangoFrontend is a web application frontend designed for recommending restaurants to individuals. 
@@ -33,4 +33,4 @@ Feel free to reach out for any queries or collaboration opportunities:
 - **GitHub**: [freecoderer](https://github.com/freecoderer)
 - **LinkedIn**: [Donghyun Kim](https://www.linkedin.com/in/kdh1999dev)
 
-![footer](https://capsule-render.vercel.app/api?section=footer&type=waving&color=7F7FD5)
+![footer](https://capsule-render.vercel.app/api?section=footer&type=waving&color=034F84)
